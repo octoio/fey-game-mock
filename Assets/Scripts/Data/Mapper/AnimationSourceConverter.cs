@@ -1,0 +1,60 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Octoio.Fey.Data.Dto;
+using Octoio.Fey.Utils;
+
+namespace Octoio.Fey.Data.Mapper
+{
+
+    public class AnimationSourceConverter : JsonConverter
+    {
+        public override bool CanConvert(System.Type objectType)
+        {
+            return typeof(AnimationSource).IsAssignableFrom(objectType);
+        }
+
+        public override object ReadJson(JsonReader reader, System.Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            // Load the JSON into a JObject for inspection.
+            JObject jo = JObject.Load(reader);
+            var type = jo["type"]?.ToString();
+            if (type == null)
+            {
+                throw new JsonSerializationException("Missing 'type' property.");
+            }
+            var enumType = EEnum.Parse<Type.Animation>(type);
+            var target = enumType switch
+            {
+                Type.Animation.Generic => new GenericAnimationSource(),
+                Type.Animation.HumanoidDaggerAttack => new HumanoidDaggerAttackAnimationSource(),
+                Type.Animation.HumanoidSwordAttack => new HumanoidSwordAttackAnimationSource(),
+                Type.Animation.HumanoidSpearAttack => new HumanoidSpearAttackAnimationSource(),
+                Type.Animation.HumanoidMaceAttack => new HumanoidMaceAttackAnimationSource(),
+                Type.Animation.HumanoidTwoHandedStaffAttack => new HumanoidTwoHandedStaffAttackAnimationSource(),
+                Type.Animation.HumanoidTwoHandedAxeAttack => new HumanoidTwoHandedAxeAttackAnimationSource(),
+                Type.Animation.HumanoidItemAttack => new HumanoidItemAttackAnimationSource(),
+                Type.Animation.HumanoidShieldAttack => new HumanoidShieldAttackAnimationSource(),
+                Type.Animation.HumanoidTwoHandedSpearAttack => new HumanoidTwoHandedSpearAttackAnimationSource(),
+                Type.Animation.HumanoidTwoHandedSwordAttack => new HumanoidTwoHandedSwordAttackAnimationSource(),
+                Type.Animation.HumanoidUnarmedAttack => new HumanoidUnarmedAttackAnimationSource(),
+                Type.Animation.HumanoidCast => new HumanoidCastAnimationSource(),
+                Type.Animation.HumanoidAttackCast => new HumanoidAttackCastAnimationSource(),
+                Type.Animation.HumanoidDualAttack => new HumanoidDualAttackAnimationSource(),
+                Type.Animation.HumanoidBlockedHit => new HumanoidBlockedHitAnimationSource(),
+                _ => null as AnimationSource
+            }
+             ?? throw new JsonSerializationException($"Unknown node type: {type}");
+
+            // Populate the target with the JSON properties.
+            serializer.Populate(jo.CreateReader(), target);
+            return target;
+        }
+
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            // For serialization, you can usually defer to the default serializer.
+            serializer.Serialize(writer, value);
+        }
+    }
+
+}

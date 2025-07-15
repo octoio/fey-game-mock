@@ -1,0 +1,15 @@
+
+namespace Octoio.Fey.Data.Dto
+{
+    public class SoundBank
+    {
+        public EntityReference HitMiss { get; private set; }
+        public EntityReference ItemReceived { get; private set; }
+        public EntityReference GoldReceived { get; private set; }
+        public EntityReference LevelUp { get; private set; }
+        public EntityReference MenuOpen { get; private set; }
+        public EntityReference MenuClose { get; private set; }
+        public EntityReference Equipped { get; private set; }
+        public EntityReference Message { get; private set; }
+    }
+}

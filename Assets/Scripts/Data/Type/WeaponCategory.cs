@@ -1,0 +1,20 @@
+
+namespace Octoio.Fey.Data.Type
+{
+    public enum WeaponCategory : byte
+    {
+        None = 0,
+        OneHandMace = 1,
+        TwoHandMace = 2,
+        OneHandAxe = 3,
+        TwoHandAxe = 4,
+        OneHandSword = 5,
+        TwoHandSword = 6,
+        Dagger = 7,
+        Fist = 8,
+        Bow = 9,
+        Staff = 10,
+        Wand = 11,
+        Shield = 12
+    }
+}

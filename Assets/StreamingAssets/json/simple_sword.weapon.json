@@ -1,0 +1,40 @@
+{
+  "id": "player:Weapon:simple_sword:1",
+  "owner": "player",
+  "type": "Weapon",
+  "key": "simple_sword",
+  "version": 1,
+  "entity": {
+    "metadata": {
+      "title": "Simple Sword",
+      "description": "A basic sword for testing"
+    },
+    "category": "OneHandSword",
+    "quality": "Common",
+    "sheathe_location": "Hips",
+    "icon_reference": {
+      "owner": "player",
+      "type": "Image",
+      "key": "simple_icon",
+      "version": 1,
+      "id": "player:Image:simple_icon:1"
+    },
+    "base_stat_affixes": [],
+    "random_stat_affix_count": {
+      "min": 0,
+      "max": 1
+    },
+    "random_stat_affixes": [],
+    "basic_attack": null,
+    "model_anchor_set": {
+      "model_reference": {
+        "owner": "player",
+        "type": "Model",
+        "key": "simple_model",
+        "version": 1,
+        "id": "player:Model:simple_model:1"
+      },
+      "anchors": []
+    }
+  }
+}

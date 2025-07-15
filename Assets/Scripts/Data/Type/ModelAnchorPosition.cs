@@ -1,0 +1,30 @@
+
+namespace Octoio.Fey.Data.Type
+{
+    public enum ModelAnchorPosition : byte
+    {
+        None = 0,
+        HeadAnchor = 1,
+        EyesAnchor = 2,
+        EaringsAnchor = 3,
+        FaceAccessoryAnchor = 4,
+        BackAnchor = 5,
+        NeckAnchor = 6,
+        ShoulderLeftAnchor = 7,
+        ShoulderRightAnchor = 8,
+        ForearmLeftAnchor = 9,
+        ForearmRightAnchor = 10,
+        HandLeftAnchor = 11,
+        HandRightAnchor = 12,
+        ChestAnchor = 13,
+        WaistAnchor = 14,
+        LegsAnchor = 15,
+        FootLeftAnchor = 16,
+        FootRightAnchor = 17,
+        MainHandAnchor = 18,
+        OffHandAnchor = 19,
+        TwoHandAnchor = 20,
+        HipLeftAnchor = 21,
+        HipRightAnchor = 22
+    }
+}

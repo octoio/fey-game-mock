@@ -1,0 +1,15 @@
+{
+  "id": "player:Image:simple_icon:1",
+  "owner": "player",
+  "type": "Image",
+  "key": "simple_icon",
+  "version": 1,
+  "entity": {
+    "type": "Texture",
+    "path": "image/simple_icon.png",
+    "size": {
+      "width": 64,
+      "height": 64
+    }
+  }
+}

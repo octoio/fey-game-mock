@@ -1,0 +1,23 @@
+
+namespace Octoio.Fey.Data.Type
+{
+    public enum Entity : byte
+    {
+        Model = 0,
+        Skill = 1,
+        Weapon = 2,
+        Equipment = 3,
+        Image = 4,
+        Status = 5,
+        Cursor = 6,
+        Stat = 7,
+        Quality = 8,
+        AudioClip = 9,
+        Sound = 10,
+        SoundBank = 11,
+        DropTable = 12,
+        Character = 13,
+        AnimationSource = 14,
+        Animation = 15
+    }
+}

@@ -1,0 +1,23 @@
+
+namespace Octoio.Fey.Data.Type
+{
+    public enum Animation : byte
+    {
+        Generic = 0,
+        HumanoidDaggerAttack = 1,
+        HumanoidSwordAttack = 2,
+        HumanoidSpearAttack = 3,
+        HumanoidMaceAttack = 4,
+        HumanoidTwoHandedStaffAttack = 5,
+        HumanoidTwoHandedAxeAttack = 6,
+        HumanoidItemAttack = 7,
+        HumanoidShieldAttack = 8,
+        HumanoidTwoHandedSpearAttack = 9,
+        HumanoidTwoHandedSwordAttack = 10,
+        HumanoidUnarmedAttack = 11,
+        HumanoidCast = 12,
+        HumanoidAttackCast = 13,
+        HumanoidDualAttack = 14,
+        HumanoidBlockedHit = 15
+    }
+}

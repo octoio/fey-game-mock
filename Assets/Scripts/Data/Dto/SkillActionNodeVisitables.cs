@@ -1,0 +1,82 @@
+using System;
+
+namespace Octoio.Fey.Data.Dto
+{
+    public abstract partial class SkillActionNode
+    {
+        public abstract T Accept<T>(ISkillActionNodeVisitor<T> visitor);
+    }
+
+    public partial class SkillActionSequenceNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionParallelNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionDelayNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionAnimationNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionSoundNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionHitEffectNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionStatusEffectNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionSummonNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+    public partial class SkillActionRequirementNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
+}

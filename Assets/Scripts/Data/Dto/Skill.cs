@@ -1,0 +1,20 @@
+using System;
+using Octoio.Fey.Data.Type;
+
+namespace Octoio.Fey.Data.Dto
+{
+    [Serializable]
+    public class Skill
+    {
+        public Metadata Metadata { get; private set; }
+        public Type.Quality Quality { get; private set; }
+        public EntityReference IconReference { get; private set; }
+        public SkillCategory[] Categories { get; private set; }
+        public SkillCost Cost { get; private set; }
+        public float Cooldown { get; private set; }
+        public SkillTarget TargetType { get; private set; }
+        public SkillActionRequirementNode ExecutionRoot { get; private set; }
+        public FloatRange CastDistance { get; private set; }
+        public SkillIndicator[] Indicators { get; private set; }
+    }
+}

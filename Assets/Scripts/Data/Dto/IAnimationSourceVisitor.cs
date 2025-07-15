@@ -1,0 +1,24 @@
+using System;
+
+namespace Octoio.Fey.Data.Dto
+{
+    public interface IAnimationSourceVisitor<TResult>
+    {
+        TResult Visit(Dto.GenericAnimationSource genericAnimationSource);
+        TResult Visit(Dto.HumanoidDaggerAttackAnimationSource humanoidDaggerAttackAnimationSource);
+        TResult Visit(Dto.HumanoidSwordAttackAnimationSource humanoidSwordAttackAnimationSource);
+        TResult Visit(Dto.HumanoidSpearAttackAnimationSource humanoidSpearAttackAnimationSource);
+        TResult Visit(Dto.HumanoidMaceAttackAnimationSource humanoidMaceAttackAnimationSource);
+        TResult Visit(Dto.HumanoidTwoHandedStaffAttackAnimationSource humanoidTwoHandedStaffAttackAnimationSource);
+        TResult Visit(Dto.HumanoidTwoHandedAxeAttackAnimationSource humanoidTwoHandedAxeAttackAnimationSource);
+        TResult Visit(Dto.HumanoidItemAttackAnimationSource humanoidItemAttackAnimationSource);
+        TResult Visit(Dto.HumanoidShieldAttackAnimationSource humanoidShieldAttackAnimationSource);
+        TResult Visit(Dto.HumanoidTwoHandedSpearAttackAnimationSource humanoidTwoHandedSpearAttackAnimationSource);
+        TResult Visit(Dto.HumanoidTwoHandedSwordAttackAnimationSource humanoidTwoHandedSwordAttackAnimationSource);
+        TResult Visit(Dto.HumanoidUnarmedAttackAnimationSource humanoidUnarmedAttackAnimationSource);
+        TResult Visit(Dto.HumanoidCastAnimationSource humanoidCastAnimationSource);
+        TResult Visit(Dto.HumanoidAttackCastAnimationSource humanoidAttackCastAnimationSource);
+        TResult Visit(Dto.HumanoidDualAttackAnimationSource humanoidDualAttackAnimationSource);
+        TResult Visit(Dto.HumanoidBlockedHitAnimationSource humanoidBlockedHitAnimationSource);
+    }
+}

@@ -1,0 +1,21 @@
+
+namespace Octoio.Fey.Data.Type
+{
+    public enum EquipmentCategory : byte
+    {
+        Head = 0,
+        Eyes = 1,
+        Earings = 2,
+        FaceAccessory = 3,
+        Back = 4,
+        Neck = 5,
+        Shoulders = 6,
+        Bracers = 7,
+        Hands = 8,
+        Ring = 9,
+        Chest = 10,
+        Waist = 11,
+        Legs = 12,
+        Feet = 13
+    }
+}

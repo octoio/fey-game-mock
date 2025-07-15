@@ -1,0 +1,60 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Octoio.Fey.Data.Dto;
+using Octoio.Fey.Utils;
+
+namespace Octoio.Fey.Data.Mapper
+{
+
+    public class EntityDefinitionConverter : JsonConverter
+    {
+        public override bool CanConvert(System.Type objectType)
+        {
+            return typeof(EntityDefinition).IsAssignableFrom(objectType);
+        }
+
+        public override object ReadJson(JsonReader reader, System.Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            // Load the JSON into a JObject for inspection.
+            JObject jo = JObject.Load(reader);
+            var type = jo["type"]?.ToString();
+            if (type == null)
+            {
+                throw new JsonSerializationException("Missing 'type' property.");
+            }
+            var enumType = EEnum.Parse<Type.Entity>(type);
+            var target = enumType switch
+            {
+                Type.Entity.Weapon => new WeaponEntityDefinition(),
+                Type.Entity.Skill => new SkillEntityDefinition(),
+                Type.Entity.Equipment => new EquipmentEntityDefinition(),
+                Type.Entity.Status => new StatusEntityDefinition(),
+                Type.Entity.Model => new ModelEntityDefinition(),
+                Type.Entity.Image => new ImageEntityDefinition(),
+                Type.Entity.Cursor => new CursorEntityDefinition(),
+                Type.Entity.Stat => new StatEntityDefinition(),
+                Type.Entity.Quality => new QualityEntityDefinition(),
+                Type.Entity.AudioClip => new AudioClipEntityDefinition(),
+                Type.Entity.Sound => new SoundEntityDefinition(),
+                Type.Entity.SoundBank => new SoundBankEntityDefinition(),
+                Type.Entity.DropTable => new DropTableEntityDefinition(),
+                Type.Entity.Character => new CharacterEntityDefinition(),
+                Type.Entity.AnimationSource => new AnimationSourceEntityDefinition(),
+                Type.Entity.Animation => new AnimationEntityDefinition(),
+                _ => null as EntityDefinition
+            }
+             ?? throw new JsonSerializationException($"Unknown node type: {type}");
+
+            // Populate the target with the JSON properties.
+            serializer.Populate(jo.CreateReader(), target);
+            return target;
+        }
+
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            // For serialization, you can usually defer to the default serializer.
+            serializer.Serialize(writer, value);
+        }
+    }
+
+}

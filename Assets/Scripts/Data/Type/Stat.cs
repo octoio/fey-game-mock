@@ -1,0 +1,31 @@
+
+namespace Octoio.Fey.Data.Type
+{
+    public enum Stat : byte
+    {
+        Vit = 0,
+        Str = 1,
+        Int = 2,
+        Dex = 3,
+        Armor = 4,
+        MagicResist = 5,
+        Health = 6,
+        Mana = 7,
+        DamageTakenModifier = 8,
+        DamageModifier = 9,
+        MovementSpeed = 10,
+        MovementSpeedModifier = 11,
+        AttackSpeed = 12,
+        AttackPower = 13,
+        AbilityPower = 14,
+        CriticalChance = 15,
+        CriticalDamage = 16,
+        CooldownReduction = 17,
+        DodgeChance = 18,
+        ManaRegen = 19,
+        HealthRegen = 20,
+        ExperienceModifier = 21,
+        GoldModifier = 22,
+        LifeSteal = 23
+    }
+}

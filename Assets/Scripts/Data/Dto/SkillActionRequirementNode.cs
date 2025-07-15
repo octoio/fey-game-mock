@@ -1,0 +1,12 @@
+using System;
+using Octoio.Fey.Data.Type;
+
+namespace Octoio.Fey.Data.Dto
+{
+    [Serializable]
+    public partial class SkillActionRequirementNode : SkillActionNode
+    {
+        public RequirementEvaluation Requirements { get; private set; }
+        public SkillActionNode Child { get; private set; }
+    }
+}

@@ -1,0 +1,16 @@
+
+namespace Octoio.Fey.Data.Type
+{
+    public enum SkillActionNode : byte
+    {
+        Sequence = 0,
+        Parallel = 1,
+        Delay = 2,
+        Animation = 3,
+        Sound = 4,
+        Hit = 5,
+        Status = 6,
+        Summon = 7,
+        Requirement = 8
+    }
+}
