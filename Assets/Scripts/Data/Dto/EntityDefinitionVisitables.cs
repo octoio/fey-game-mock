@@ -140,4 +140,12 @@ namespace Octoio.Fey.Data.Dto
         }
     }
 
+    public partial class ProjectileEntityDefinition : EntityDefinition
+    {
+        public override T Accept<T>(IEntityDefinitionVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
 }

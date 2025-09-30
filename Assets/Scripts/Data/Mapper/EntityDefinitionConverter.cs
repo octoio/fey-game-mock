@@ -46,6 +46,7 @@ namespace Octoio.Fey.Data.Mapper
                 Type.Entity.Character => new CharacterEntityDefinition(),
                 Type.Entity.AnimationSource => new AnimationSourceEntityDefinition(),
                 Type.Entity.Animation => new AnimationEntityDefinition(),
+                Type.Entity.Projectile => new ProjectileEntityDefinition(),
                 _ => null as EntityDefinition
             }
              ?? throw new JsonSerializationException($"Unknown node type: {type}");

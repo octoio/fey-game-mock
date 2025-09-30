@@ -84,4 +84,12 @@ namespace Octoio.Fey.Data.Dto
         }
     }
 
+    public partial class SkillActionProjectileNode : SkillActionNode
+    {
+        public override T Accept<T>(ISkillActionNodeVisitor<T> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+
 }

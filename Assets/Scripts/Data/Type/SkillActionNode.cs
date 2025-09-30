@@ -16,6 +16,7 @@ namespace Octoio.Fey.Data.Type
         Hit = 5,
         Status = 6,
         Summon = 7,
-        Requirement = 8
+        Requirement = 8,
+        Projectile = 9
     }
 }

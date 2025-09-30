@@ -23,6 +23,7 @@ namespace Octoio.Fey.Data.Type
         DropTable = 12,
         Character = 13,
         AnimationSource = 14,
-        Animation = 15
+        Animation = 15,
+        Projectile = 16
     }
 }

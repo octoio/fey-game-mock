@@ -11,11 +11,11 @@ using Octoio.Fey.Utils;
 namespace Octoio.Fey.Data.Mapper
 {
 
-    public class SkillActionNodeConverter : JsonConverter
+    public class EffectTargetMechanicConverter : JsonConverter
     {
         public override bool CanConvert(System.Type objectType)
         {
-            return typeof(SkillActionNode).IsAssignableFrom(objectType);
+            return typeof(EffectTargetMechanic).IsAssignableFrom(objectType);
         }
 
         public override object ReadJson(JsonReader reader, System.Type objectType, object existingValue, JsonSerializer serializer)
@@ -27,20 +27,15 @@ namespace Octoio.Fey.Data.Mapper
             {
                 throw new JsonSerializationException("Missing 'type' property.");
             }
-            var enumType = EEnum.Parse<Type.SkillActionNode>(type);
+            var enumType = EEnum.Parse<Type.EffectTargetMechanicType>(type);
             var target = enumType switch
             {
-                Type.SkillActionNode.Sequence => new SkillActionSequenceNode(),
-                Type.SkillActionNode.Parallel => new SkillActionParallelNode(),
-                Type.SkillActionNode.Delay => new SkillActionDelayNode(),
-                Type.SkillActionNode.Animation => new SkillActionAnimationNode(),
-                Type.SkillActionNode.Sound => new SkillActionSoundNode(),
-                Type.SkillActionNode.Hit => new SkillActionHitEffectNode(),
-                Type.SkillActionNode.Status => new SkillActionStatusEffectNode(),
-                Type.SkillActionNode.Summon => new SkillActionSummonNode(),
-                Type.SkillActionNode.Requirement => new SkillActionRequirementNode(),
-                Type.SkillActionNode.Projectile => new SkillActionProjectileNode(),
-                _ => null as SkillActionNode
+                Type.EffectTargetMechanicType.Self => new EffectTargetMechanicSelf(),
+                Type.EffectTargetMechanicType.Team => new EffectTargetMechanicTeam(),
+                Type.EffectTargetMechanicType.Selected => new EffectTargetMechanicSelected(),
+                Type.EffectTargetMechanicType.Circle => new EffectTargetMechanicCircle(),
+                Type.EffectTargetMechanicType.Rectangle => new EffectTargetMechanicRectangle(),
+                _ => null as EffectTargetMechanic
             }
              ?? throw new JsonSerializationException($"Unknown node type: {type}");
 

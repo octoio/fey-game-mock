@@ -11,9 +11,9 @@ namespace Octoio.Fey.Data.Dto
     public class HitEffect
     {
         public Type.Hit HitType { get; private set; }
-        public SkillEffectScaling[] Scalers { get; private set; }
-        public SkillEffectTargetMechanic TargetMechanic { get; private set; }
-        public SkillEffectTarget Target { get; private set; }
+        public EffectScaling[] Scalers { get; private set; }
+        public EffectTargetMechanic TargetMechanic { get; private set; }
+        public EffectTarget Target { get; private set; }
         public EntityReference HitSound { get; private set; }
         public bool CanCrit { get; private set; }
         public bool CanMiss { get; private set; }

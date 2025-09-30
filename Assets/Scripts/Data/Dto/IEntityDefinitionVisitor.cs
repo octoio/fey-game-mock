@@ -25,5 +25,6 @@ namespace Octoio.Fey.Data.Dto
         TResult Visit(Dto.CharacterEntityDefinition characterEntityDefinition);
         TResult Visit(Dto.AnimationSourceEntityDefinition animationSourceEntityDefinition);
         TResult Visit(Dto.AnimationEntityDefinition animationEntityDefinition);
+        TResult Visit(Dto.ProjectileEntityDefinition projectileEntityDefinition);
     }
 }

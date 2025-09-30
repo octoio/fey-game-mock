@@ -18,5 +18,6 @@ namespace Octoio.Fey.Data.Dto
         TResult Visit(Dto.SkillActionStatusEffectNode skillActionStatusEffectNode);
         TResult Visit(Dto.SkillActionSummonNode skillActionSummonNode);
         TResult Visit(Dto.SkillActionRequirementNode skillActionRequirementNode);
+        TResult Visit(Dto.SkillActionProjectileNode skillActionProjectileNode);
     }
 }
